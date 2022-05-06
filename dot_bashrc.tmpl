@@ -125,8 +125,11 @@ alias l='lsd -l'
 alias ll='lsd -al'
 alias lt='lsd --tree'
 
-# kubernetes
+{{- if ne (env "REMOTE_CONTAINERS") "true" }}
+# devcontainerのときは除外
+# kubectl
 'source <(kubectl completion bash)'
+{{- end }}
 
 # login
 neofetch
