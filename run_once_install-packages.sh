@@ -9,12 +9,13 @@ curl -fsSL https://starship.rs/install.sh | sh -s -- --yes
 
 # apt
 sudo apt update
-sudo apt -y install neofetch bat
+sudo apt -y install neofetch bat duf ncdu
 
 # lsd
-wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
-sudo dpkg -i lsd_0.21.0_amd64.deb
-rm -rf lsd_0.21.0_amd64.deb
+lsd_version=0.22.0
+wget https://github.com/Peltoche/lsd/releases/download/"${lsd_version}"/lsd_"${lsd_version}"_amd64.deb
+sudo dpkg -i lsd_"${lsd_version}"_amd64.deb
+rm -rf lsd_"${lsd_version}"_amd64.deb
 
 # Font
 sudo mkdir -p /usr/local/share/fonts
